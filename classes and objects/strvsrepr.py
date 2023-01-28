@@ -48,3 +48,5 @@ t = Complex(10, 20)
 # Same as "print t"
 print (str(t))  
 print (repr(t))
+# If you apply str or repr to an object, Python is looking for a corresponding method __str__ or __repr__ in the class definition of the object. If the method does exist, it will be called otherwise Python uses the default output for the object.
+# A frequently asked question is when to use __repr__ and when __str__. __str__ is always the right choice, if the output should be for the end user or in other words, if it should be nicely printed. __repr__ on the other hand is used for the internal representation of an object.
