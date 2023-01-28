@@ -18,4 +18,20 @@ if __name__ == "__main__":
     del x
     print("Deleting z")
     del z
+    # The del keyword is used to delete objects. In Python everything is an object, so the del keyword can also be used to delete variables, lists, or parts of a list etc.
+    del y
+# The usage of the __del__ method is very problematic. If we change the previous code to personalize the deletion of a robot, we create an error because We are accessing an attribute which doesn't exist anymore.
+class Robot():
+    def __init__(self, name):
+        print(name + " has been created!")
+    def __del__(self):
+        print (self.name + " says bye-bye!")
+if __name__ == "__main__":
+    x = Robot("Tik-Tok")
+    y = Robot("Jenkins")
+    z = x
+    print("Deleting x")
+    del x
+    print("Deleting z")
+    del z
     del y
