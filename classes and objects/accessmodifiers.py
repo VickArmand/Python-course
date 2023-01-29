@@ -38,3 +38,10 @@ if __name__ == "__main__":
         if rob.get_name() == "Caliban":
             rob.set_build_year(1993)
         print("I was built in the year " + str(rob.get_build_year()) + "!")
+# getattr() function returns the value of the specified attribute from the specified object.
+class Person:
+  name = "John"
+  age = 36
+  country = "Norway"
+
+x = getattr(Person, 'age')
