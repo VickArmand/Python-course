@@ -6,4 +6,3 @@ print(name)
 print(type(name))
 name = json.loads(name)#converts from json to py dictionary
 print(name)
-
