@@ -14,3 +14,6 @@ class User(Base):
 for i in range(4):
     u = User()
 print(u.id)
+print(dir(u))
+u.__repr__()
+# dir returns a list of methods, magic methods, attributes of a class
