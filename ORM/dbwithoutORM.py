@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # MySQLdb is a connector/driver used in python to connect to mysql database
-import MySQLdb as mysql
+#import MySQLdb as mysql
+import mysql.connector as mysql
 
 # Illustrating mysql database connection in python
 # .connect(host, user, password, dbname)
@@ -9,7 +10,7 @@ print(f"Connection created successfully {db}")
 # think of a cursor as a database session for interaction
 # creating a cursor
 cur = db.cursor()
-print("Cursor created "+ cur)
+print(f"Cursor created {cur}")
 # Creating tables using the same created cursor
 createquery= "CREATE TABLE IF NOT EXISTS posts (id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT, body TEXT NOT NULL )"
 cur.execute(createquery)

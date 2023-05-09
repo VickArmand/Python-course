@@ -8,9 +8,11 @@ in this module we are demonstrating the use of sqlalchemy orm in sql database ma
 # connection to database
 # in the command below we are passing the database connector as a parameter to the method create_engine to ensure connection
 # the connector takes the following syntax:
-# db_flavor(mysql or postgresql)+db_connector://user:password@host/db_name
-engine = create_engine('mysql+mysqldb://root:@localhost/blogs', echo = True)
-print('Connection established {engine}')
+# db_flavor(mysql or postgresql)+db_connector(mysqldb or pymysql)://user:password@host/db_name
+
+# engine = create_engine('mysql+mysqldb://user:pwd@localhost/blogs', echo = True)
+engine = create_engine('mysql+pymysql://user:pwd@localhost/blogs', echo = True)
+print(f'Connection established {engine}')
 # session creation - this is similar to the cursor creation in the other file
 Session = sessionmaker(bind=engine)
 session = Session()
