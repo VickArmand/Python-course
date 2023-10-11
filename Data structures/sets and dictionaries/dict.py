@@ -4,6 +4,12 @@ person = {
           'age' : 15, 
           'country': 'Kenya'
           }
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+print(list(map(lambda x:x, matrix)))
 person['occupation'] = 'Software Engineer'
 for key, value in person.items():
     print(f"{key} :{value}")
