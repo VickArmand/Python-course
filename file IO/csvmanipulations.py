@@ -7,7 +7,19 @@ import csv
 
 def read_csv(filename=""):
     with open(filename, 'r') as f:
-        list(csv.reader(f))
+        return list(csv.reader(f))
+
+def read_csv_with_headers(filename="", headers=[]):
+    with open(filename, "r") as f:
+        obj_dict = []
+        reader = csv.DictReader(f, headers)
+        count = 0
+        for row in reader:
+            obj_dict.append({})
+            for i in headers:
+                obj_dict[count][i] = row[i]
+            count += 1
+    return obj_dict
 
 def write_csv(filename="", data=[]):
     with open(filename, 'w') as f:
@@ -24,5 +36,8 @@ def write_csv_with_headers(filename="", data=[], headers=[]):
         outputwriter.writerow(data)
 
 if __name__ == "__main__":
+    headers = ["Name", "Age", "Course"]
     write_csv("people.csv", ["John Smith", 20, "Electrical Engineering"])
-    write_csv_with_headers("students.csv", {"Name":"John Smith", "Age": 20, "Course":"Electrical Engineering"}, ["Name", "Age", "Course"])
+    write_csv_with_headers("students.csv", {"Name":"John Smith", "Age": 20, "Course":"Electrical Engineering"}, headers)
+    print(read_csv("people.csv"))
+    print(read_csv_with_headers("students.csv", headers))
