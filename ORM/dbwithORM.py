@@ -35,4 +35,4 @@ session.add(post1)
 session.commit()
 # fetching our records
 query = session.query(Post)
-print(query.all())
+print(query.all())  
